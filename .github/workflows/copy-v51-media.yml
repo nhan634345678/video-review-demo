@@ -1,0 +1,44 @@
+name: Copy authorized V5.1 review media
+on:
+  workflow_dispatch:
+    inputs:
+      bridge_url:
+        type: string
+        required: true
+      release_tag:
+        type: string
+        required: true
+permissions:
+  contents: write
+jobs:
+  transfer:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      BRIDGE_URL: ${{ inputs.bridge_url }}
+      RELEASE_TAG: ${{ inputs.release_tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Copy explicitly authorized MP4s and rendered frames; verify exact hashes
+        run: |
+          python3 - <<'PY'
+          import os,re,urllib.request,pathlib,json,hashlib,zipfile
+          base=os.environ['BRIDGE_URL'];tag=os.environ['RELEASE_TAG']
+          assert re.fullmatch(r'https://[a-z0-9-]+\.trycloudflare\.com',base)
+          assert re.fullmatch(r'v51-(?:probe|final)-\d+-review',tag)
+          pathlib.Path('media').mkdir()
+          m=json.load(urllib.request.urlopen(base+'/media-checksums.json'))
+          allowed={'v51-probe.mp4','v51-technical.mp4','v4-v5-v51-comparison.mp4','frames.zip'}
+          assert all(a['name'] in allowed for a in m)
+          for a in m:
+            p=pathlib.Path('media')/a['name'];urllib.request.urlretrieve(base+'/'+a['name'],p)
+            assert p.stat().st_size==a['bytes'] and hashlib.sha256(p.read_bytes()).hexdigest()==a['sha256']
+          pathlib.Path('media-checksums.json').write_text(json.dumps(m,indent=2))
+          with zipfile.ZipFile('media/frames.zip') as z:
+            for n in z.namelist():
+              if re.fullmatch(r'(?:comparison-\d+\.\d+\.jpg|native-broll-\d+\.\d+\.png)',n):
+                pathlib.Path('media',n).write_bytes(z.read(n))
+          PY
+      - name: Preserve separate versioned review release
+        run: gh release create "$RELEASE_TAG" media/* media-checksums.json --title "Braincell V5.1 reviewed media" --notes-file ATTRIBUTION.md
