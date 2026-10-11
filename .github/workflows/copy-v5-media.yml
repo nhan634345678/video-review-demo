@@ -1,0 +1,35 @@
+name: Copy authorized review media to public release
+on:
+  workflow_dispatch:
+    inputs:
+      bridge_url:
+        description: Temporary HTTPS media-only bridge
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  transfer:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Copy only three explicitly approved informational demo videos
+        env:
+          BRIDGE_URL: ${{ inputs.bridge_url }}
+        run: |
+          python3 - <<'PY'
+          import os,re,urllib.request,pathlib,hashlib,json
+          base=os.environ['BRIDGE_URL']
+          assert re.fullmatch(r'https://[a-z0-9-]+\.trycloudflare\.com',base)
+          out=pathlib.Path('media');out.mkdir()
+          evidence=[]
+          for name in ['v5-technical.mp4','v5-entertainment.mp4','v4-vs-v5-comparison.mp4']:
+            urllib.request.urlretrieve(base+'/'+name,out/name)
+            evidence.append({'name':name,'bytes':(out/name).stat().st_size,'sha256':hashlib.sha256((out/name).read_bytes()).hexdigest()})
+          pathlib.Path('media-checksums.json').write_text(json.dumps(evidence,indent=2))
+          PY
+      - name: Publish media binaries only; no private source or logs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create v5-review media/*.mp4 media-checksums.json --title "V5 controlled comparison and original fictional animation" --notes-file ATTRIBUTION.md
