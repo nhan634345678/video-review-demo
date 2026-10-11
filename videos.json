@@ -28,5 +28,25 @@
     "duration": 52.4,
     "bytes": 50878353,
     "notes": "Cùng cách dựng B; CRF 18 và nét chữ cải thiện."
+  },
+  {
+    "id": "v4-premium",
+    "label": "V4 · Premium",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v4-review/v4-premium.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 39784186,
+    "notes": "Căn165từ theo âm thanh, phụ đề tối đa2dòng, hook mới và2đồ họa giải thích. CRF19 fast."
+  },
+  {
+    "id": "v4-max",
+    "label": "V4 · Maximum",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v4-review/v4-max-quality.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 44420884,
+    "notes": "Cùng dựng V4; CRF18 medium, phụ đề khử răng cưa2×."
   }
 ]
