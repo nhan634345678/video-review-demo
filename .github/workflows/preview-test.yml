@@ -13,9 +13,9 @@ jobs:
         run: |
           google-chrome --version
           timeout 120 npm install --prefix .qa --no-save playwright@1.64.0
-      - name: Verify actual deployed player including range, seek, AAC and full C playback
+      - name: Verify actual deployed player including range, seek, AAC and full V4 playback and fullscreen
         run: node tests/preview.mjs
       - name: Preserve browser proof
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload v3-review playback-test.json qa/*.png --clobber
+        run: gh release upload v4-review playback-test.json qa/*.png --clobber
