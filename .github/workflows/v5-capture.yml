@@ -1,0 +1,21 @@
+name: Capture stable V5 review frames
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  chrome:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Provision lightweight browser tester on cloud only
+        run: |
+          google-chrome --version
+          timeout 120 npm install --prefix .qa --no-save playwright@1.64.0
+      - name: Capture final review frames after stable actual playback
+        run: node tests/v5-capture.mjs
+      - name: Preserve browser proof
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload v5-review screenshot-test.json qa/*.png --clobber
