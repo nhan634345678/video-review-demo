@@ -41,4 +41,4 @@ jobs:
                 pathlib.Path('media',n).write_bytes(z.read(n))
           PY
       - name: Preserve separate versioned review release
-        run: gh release create "$RELEASE_TAG" media/* media-checksums.json --title "Braincell V5.1 reviewed media" --notes-file ATTRIBUTION.md
+        run: gh release create "$RELEASE_TAG" media/* media-checksums.json --title "Braincell V5.1 reviewed media" --notes-file V51_ATTRIBUTION.md
