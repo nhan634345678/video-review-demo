@@ -1,5 +1,42 @@
 [
   {
+    "id": "v52-technical",
+    "label": "V5.2 · Creative Director",
+    "group": "nasa",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v52-final-38148687940-review/v52-technical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52,
+    "bytes": 44740646,
+    "notes": "Caption Anton lớn hơn 21%, nhấn từ đúng nhịp, hook viền trắng và COLD? coral. Chuyển Trái Đất sang ảnh Bắc Cực, đường cong 3×, hai zoom có lý do. Kết thúc đủ câu ở 52 giây; nguồn và ghi công trong metadata.",
+    "markers": [
+      {
+        "time": 0,
+        "label": "Hook"
+      },
+      {
+        "time": 8.65,
+        "label": "Winter contradiction"
+      },
+      {
+        "time": 15.55,
+        "label": "Climate vs weather"
+      },
+      {
+        "time": 26.05,
+        "label": "Regional differences"
+      },
+      {
+        "time": 38.65,
+        "label": "Misconception"
+      },
+      {
+        "time": 44.9,
+        "label": "Payoff"
+      }
+    ]
+  },
+  {
     "id": "v51-technical",
     "label": "V5.1 · Creative Master",
     "group": "nasa",

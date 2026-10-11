@@ -1,0 +1,351 @@
+{
+  "name": "v52-technical",
+  "duration": 52,
+  "width": 1080,
+  "height": 1920,
+  "bytes": 44740646,
+  "sha256": "90501a85c1225f5365cf8e5e0dfca86a9a69ea01130f808285dff2b3fcd7b3dc",
+  "decode": "PASS",
+  "avStartDelta": 0,
+  "captionGroups": 43,
+  "wordCount": 165,
+  "captionYValues": [
+    1190,
+    1275
+  ],
+  "captionBackground": false,
+  "captionOutline": 0,
+  "captionShadow": 0,
+  "captionSafeZones": "PASS",
+  "captionTemporalOverlaps": 0,
+  "captionCollisions": 0,
+  "motion": {
+    "frames": 1560,
+    "resolution": [
+      1080,
+      1920
+    ],
+    "textBoundsChecked": 2661
+  },
+  "motionSeconds": 91.566671644,
+  "encodeSeconds": 196.94820793400004,
+  "peakEncoderRssMiB": 659.02734375,
+  "audio": {
+    "input_i": "-16.04",
+    "input_tp": "-1.98",
+    "input_lra": "2.20",
+    "input_thresh": "-26.12",
+    "output_i": "-16.04",
+    "output_tp": "-2.00",
+    "output_lra": "2.30",
+    "output_thresh": "-26.11",
+    "normalization_type": "dynamic",
+    "target_offset": "0.04"
+  },
+  "blackIntervals": [],
+  "cameraCurves": "quintic smootherstep + sampled cubic Bezier snap, fixed inspected anchor",
+  "scope": "All-frame luminance threshold and authored text bounds. Editorial obstacles manually inspected. No automatic face/emotion detector. No subjective score.",
+  "sourceSha256": "60b03f3f0db491596542e24c895a3360c1b759fd8b22bfcddb72d283f3d6797a",
+  "baselineHashes": {
+    "v4-premium.mp4": "3e7534ea5c85314713768893f757fd7c1ec089820e4cf7e6e894586a1b3ee390",
+    "v5-technical.mp4": "085f6b841617e9b6f227b5367a4eeaf85c26d33bddba9b6583843aa372883268",
+    "v51-technical.mp4": "968d70c1752eb75e01e3593b332b729e11d072ef0ff73e57a49f89fb8ffb26f5"
+  },
+  "cloudRun": "38148687940",
+  "rendererSha256": "b346343fd7da6c6127325a6e1c5e0ef8c053ff434707fe9dae9bfeb9d566bbeb",
+  "captionSize": 102,
+  "vectorSupersample": 3,
+  "contrastChoices": {
+    "0": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "6": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "11": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "14": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "17": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "23": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "27": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "28": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "34": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "40": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "46": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "47": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "52": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "53": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "54": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "59": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "62": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "65": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "70": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "72": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "74": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "78": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "81": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "84": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "88": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "91": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "96": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "100": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "105": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "108": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "113": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "118": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "122": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "124": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "129": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "130": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "134": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "137": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "142": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "147": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "152": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "157": {
+      "neutral": "FFFFFF",
+      "bright": false
+    },
+    "163": {
+      "neutral": "FFFFFF",
+      "bright": false
+    }
+  },
+  "wordTimingSha256": "caafd425215672f2c4cf4402b7077212daf7d350b55c59a0e42aab578e39368a",
+  "ending": {
+    "lastWordEnd": 51.728,
+    "cleanSourceUntil": 52,
+    "pauseAfterSpeech": 0.272,
+    "policy": "End before source credits; retain every spoken word; no outro."
+  },
+  "aacPrefixPacketsIdentical": true,
+  "aacPrefixPacketHash": "SHA256=77ede48dafbfb4df64a6bccb1b90d878960e1aa02b93a1c17b52951601508417",
+  "endingFrames": [
+    {
+      "frame": 1542,
+      "time": 51.4,
+      "seekTime": 51.399,
+      "blackPixelFraction": 0.0022222222222222222
+    },
+    {
+      "frame": 1543,
+      "time": 51.43333333333333,
+      "seekTime": 51.43233333333333,
+      "blackPixelFraction": 0.0020833333333333333
+    },
+    {
+      "frame": 1544,
+      "time": 51.46666666666667,
+      "seekTime": 51.46566666666667,
+      "blackPixelFraction": 0.0015972222222222223
+    },
+    {
+      "frame": 1545,
+      "time": 51.5,
+      "seekTime": 51.499,
+      "blackPixelFraction": 0.0014583333333333334
+    },
+    {
+      "frame": 1546,
+      "time": 51.53333333333333,
+      "seekTime": 51.532333333333334,
+      "blackPixelFraction": 0.0014583333333333334
+    },
+    {
+      "frame": 1547,
+      "time": 51.56666666666667,
+      "seekTime": 51.56566666666667,
+      "blackPixelFraction": 0.0011805555555555556
+    },
+    {
+      "frame": 1548,
+      "time": 51.6,
+      "seekTime": 51.599000000000004,
+      "blackPixelFraction": 0.0013194444444444445
+    },
+    {
+      "frame": 1549,
+      "time": 51.63333333333333,
+      "seekTime": 51.632333333333335,
+      "blackPixelFraction": 0.0011805555555555556
+    },
+    {
+      "frame": 1550,
+      "time": 51.666666666666664,
+      "seekTime": 51.66566666666667,
+      "blackPixelFraction": 0.0011805555555555556
+    },
+    {
+      "frame": 1551,
+      "time": 51.7,
+      "seekTime": 51.699000000000005,
+      "blackPixelFraction": 0.00125
+    },
+    {
+      "frame": 1552,
+      "time": 51.733333333333334,
+      "seekTime": 51.73233333333334,
+      "blackPixelFraction": 0.0014583333333333334
+    },
+    {
+      "frame": 1553,
+      "time": 51.766666666666666,
+      "seekTime": 51.76566666666667,
+      "blackPixelFraction": 0.0016666666666666668
+    },
+    {
+      "frame": 1554,
+      "time": 51.8,
+      "seekTime": 51.799,
+      "blackPixelFraction": 0.0016666666666666668
+    },
+    {
+      "frame": 1555,
+      "time": 51.833333333333336,
+      "seekTime": 51.83233333333334,
+      "blackPixelFraction": 0.001875
+    },
+    {
+      "frame": 1556,
+      "time": 51.86666666666667,
+      "seekTime": 51.86566666666667,
+      "blackPixelFraction": 0.0019444444444444444
+    },
+    {
+      "frame": 1557,
+      "time": 51.9,
+      "seekTime": 51.899,
+      "blackPixelFraction": 0.0018055555555555555
+    },
+    {
+      "frame": 1558,
+      "time": 51.93333333333333,
+      "seekTime": 51.93233333333333,
+      "blackPixelFraction": 0.0015277777777777779
+    },
+    {
+      "frame": 1559,
+      "time": 51.96666666666667,
+      "seekTime": 51.96566666666667,
+      "blackPixelFraction": 0.0015972222222222223
+    }
+  ]
+}
