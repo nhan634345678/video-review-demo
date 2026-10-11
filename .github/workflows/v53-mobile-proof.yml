@@ -1,0 +1,24 @@
+name: Preserve complete V5.3 mobile player visual proof
+on:
+  push:
+    branches: [main]
+    paths: [review-v53-request.json]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  mobile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: timeout 120 npm install --prefix .qa --no-save playwright@1.64.0
+      - run: node tests/v53-mobile-proof.mjs
+      - name: Save independent mobile evidence without replacing full playback proof
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(python3 -c "import json; print(next(x['url'].split('/')[-2] for x in json.load(open('videos.json')) if x['id']=='v53-technical'))")
+          zip -q "v53-mobile-proof-${GITHUB_RUN_ID}.zip" v53-mobile-proof.json qa/*.png
+          gh release upload "$tag" "v53-mobile-proof-${GITHUB_RUN_ID}.zip"
+
