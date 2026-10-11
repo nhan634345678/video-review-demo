@@ -1,0 +1,18 @@
+import fs from 'node:fs';import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);const {chromium}=require('../.qa/node_modules/playwright');
+const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']});
+const p=await browser.newPage({viewport:{width:1440,height:1040}});const errors=[];p.on('pageerror',e=>errors.push(e.message));
+await p.goto('https://nhan634345678.github.io/video-review-demo/',{waitUntil:'networkidle'});
+await p.waitForFunction(()=>document.querySelector('#main-video').readyState===4);
+await p.getByRole('button',{name:'⇄ So sánh hai bản',exact:true}).click();await p.locator('#compare-select').selectOption('v5-technical');
+await p.waitForFunction(()=>document.querySelector('#right-video').readyState===4);
+await p.locator('#main-video').evaluate(v=>v.currentTime=17);
+await p.locator('#right-video').evaluate(v=>v.currentTime=17);
+await p.waitForFunction(()=>['main-video','right-video'].every(id=>{const v=document.getElementById(id);return !v.seeking&&v.readyState===4&&Math.abs(v.currentTime-17)<.05;}));
+await p.waitForTimeout(600);fs.mkdirSync('qa',{recursive:true});await p.evaluate(()=>window.scrollTo(0,0));await p.screenshot({path:'qa/review-overview.png'});
+const desktop=await p.evaluate(()=>['main-video','right-video'].map(id=>{const v=document.getElementById(id);return {source:v.currentSrc,time:v.currentTime,ready:v.readyState,error:v.error?.message||null};}));
+await p.getByRole('button',{name:'⇄ So sánh hai bản',exact:true}).click();await p.setViewportSize({width:390,height:844});
+await p.locator('#main-video').evaluate(v=>v.currentTime=30.8);await p.waitForFunction(()=>{const v=document.querySelector('#main-video');return !v.seeking&&v.readyState===4&&Math.abs(v.currentTime-30.8)<.05;});
+await p.waitForTimeout(600);await p.evaluate(()=>window.scrollTo(0,0));await p.screenshot({path:'qa/review-phone.png'});
+const overflow=await p.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);if(overflow||errors.length)throw Error('Snapshot page error');
+fs.writeFileSync('v51-screenshot-qa.json',JSON.stringify({status:'PASS',desktop,mobile:{width:390,height:844,time:30.8,overflow},errors,scope:'Clean viewport evidence; full browser stream/decode tests are separately archived.'},null,2));await browser.close();

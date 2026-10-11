@@ -1,0 +1,18 @@
+name: Capture verified V5.1 review
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: timeout 120 npm install --prefix .qa --no-save playwright@1.64.0
+      - run: node tests/v51-capture.mjs
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(python3 -c "import json; print(next(x['url'].split('/')[-2] for x in json.load(open('videos.json')) if x['id']=='v51-technical'))")
+          gh release upload "$tag" v51-screenshot-qa.json qa/*.png --clobber
