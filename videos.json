@@ -1,0 +1,32 @@
+[
+  {
+    "id": "v3-a",
+    "label": "V3 A · Clean",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v3-review/v3-clean.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 29301878,
+    "notes": "Phụ đề theo cụm, giọng nói gốc, không nhạc nền."
+  },
+  {
+    "id": "v3-b",
+    "label": "V3 B · Premium",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v3-review/v3-premium.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 31146540,
+    "notes": "Chữ trắng/vàng theo từng từ, hai lần zoom 7%, nhạc nền giảm theo giọng nói."
+  },
+  {
+    "id": "v3-c",
+    "label": "V3 C · Maximum",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v3-review/v3-max-quality.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 50878353,
+    "notes": "Cùng cách dựng B; CRF 18 và nét chữ cải thiện."
+  }
+]
