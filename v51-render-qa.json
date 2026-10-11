@@ -1,0 +1,205 @@
+{
+  "name": "v51-technical",
+  "duration": 52.4,
+  "width": 1080,
+  "height": 1920,
+  "bytes": 46611157,
+  "sha256": "968d70c1752eb75e01e3593b332b729e11d072ef0ff73e57a49f89fb8ffb26f5",
+  "decode": "PASS",
+  "avStartDelta": 0,
+  "captionGroups": 43,
+  "wordCount": 165,
+  "captionYValues": [
+    1158,
+    1188,
+    1190,
+    1210,
+    1240
+  ],
+  "captionBackground": false,
+  "captionOutline": 0,
+  "captionShadow": 0,
+  "captionSafeZones": "PASS",
+  "captionTemporalOverlaps": 0,
+  "captionCollisions": 0,
+  "motion": {
+    "frames": 1572,
+    "resolution": [
+      1080,
+      1920
+    ],
+    "textBoundsChecked": 2402
+  },
+  "motionSeconds": 61.801002362999995,
+  "encodeSeconds": 204.328382974,
+  "peakEncoderRssMiB": 667.35546875,
+  "audio": {
+    "input_i": "-16.06",
+    "input_tp": "-1.98",
+    "input_lra": "2.30",
+    "input_thresh": "-26.20",
+    "output_i": "-16.04",
+    "output_tp": "-2.01",
+    "output_lra": "2.30",
+    "output_thresh": "-26.15",
+    "normalization_type": "dynamic",
+    "target_offset": "0.04"
+  },
+  "blackIntervals": [],
+  "cameraCurves": "quintic smootherstep + sampled cubic Bezier snap, fixed inspected anchor",
+  "scope": "All-frame luminance threshold and authored text bounds. Editorial obstacles manually inspected. No automatic face/emotion detector. No subjective score.",
+  "inputSourceSha256": "60b03f3f0db491596542e24c895a3360c1b759fd8b22bfcddb72d283f3d6797a",
+  "wordTimingsSha256": "caafd425215672f2c4cf4402b7077212daf7d350b55c59a0e42aab578e39368a",
+  "planSha256": "983e0c6e71636ed33f9438ce59cc4dd9e6315ba070ca281a7b23e186620e455a",
+  "rendererSha256": "00686e78f4b66b8caec10cfee53f1053e0c66b6fbe09ec461ab03bc9b87a48d2",
+  "audioReuse": "Existing V5 AAC bitstream; no re-encoding",
+  "cloudRun": "38142833461",
+  "aacPacketHash": "SHA256=f5101c26ba177eead1fcad7c60f6cdd9a4fcf7847eb862d262df39419f6461de",
+  "aacPacketsIdentical": true,
+  "roundedPipEncodedCorners": [
+    {
+      "time": 17,
+      "point": [
+        60,
+        1340
+      ],
+      "rgb": [
+        21,
+        61,
+        93
+      ],
+      "expectedBackground": [
+        22,
+        62,
+        94
+      ],
+      "maxDifference": 1
+    },
+    {
+      "time": 17,
+      "point": [
+        307,
+        1340
+      ],
+      "rgb": [
+        21,
+        61,
+        93
+      ],
+      "expectedBackground": [
+        22,
+        62,
+        94
+      ],
+      "maxDifference": 1
+    },
+    {
+      "time": 17,
+      "point": [
+        60,
+        1779
+      ],
+      "rgb": [
+        23,
+        67,
+        101
+      ],
+      "expectedBackground": [
+        25,
+        70,
+        103
+      ],
+      "maxDifference": 3
+    },
+    {
+      "time": 17,
+      "point": [
+        307,
+        1779
+      ],
+      "rgb": [
+        24,
+        68,
+        102
+      ],
+      "expectedBackground": [
+        25,
+        70,
+        103
+      ],
+      "maxDifference": 2
+    },
+    {
+      "time": 30.8,
+      "point": [
+        60,
+        1340
+      ],
+      "rgb": [
+        21,
+        61,
+        93
+      ],
+      "expectedBackground": [
+        22,
+        62,
+        94
+      ],
+      "maxDifference": 1
+    },
+    {
+      "time": 30.8,
+      "point": [
+        307,
+        1340
+      ],
+      "rgb": [
+        21,
+        61,
+        93
+      ],
+      "expectedBackground": [
+        22,
+        62,
+        94
+      ],
+      "maxDifference": 1
+    },
+    {
+      "time": 30.8,
+      "point": [
+        60,
+        1779
+      ],
+      "rgb": [
+        23,
+        67,
+        101
+      ],
+      "expectedBackground": [
+        25,
+        70,
+        103
+      ],
+      "maxDifference": 3
+    },
+    {
+      "time": 30.8,
+      "point": [
+        307,
+        1779
+      ],
+      "rgb": [
+        24,
+        68,
+        102
+      ],
+      "expectedBackground": [
+        25,
+        70,
+        103
+      ],
+      "maxDifference": 2
+    }
+  ]
+}

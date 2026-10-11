@@ -1,5 +1,42 @@
 [
   {
+    "id": "v51-technical",
+    "label": "V5.1 · Creative Master",
+    "group": "nasa",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v51-final-38142833461-review/v51-technical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 46611157,
+    "notes": "Chữ trắng sáng, nhấn vàng/xanh/coral, emoji theo lời nói; tiêu đề và tên khách mời bo tròn. Ảnh vệ tinh NASA, PiP bo góc và chuyển động theo đường cong. Cùng nguồn, lời nói và âm thanh với V4/V5.",
+    "markers": [
+      {
+        "time": 0,
+        "label": "Hook"
+      },
+      {
+        "time": 8.65,
+        "label": "Winter contradiction"
+      },
+      {
+        "time": 15.55,
+        "label": "Climate vs weather"
+      },
+      {
+        "time": 26.05,
+        "label": "Regional differences"
+      },
+      {
+        "time": 38.65,
+        "label": "Misconception"
+      },
+      {
+        "time": 44.9,
+        "label": "Payoff"
+      }
+    ]
+  },
+  {
     "id": "v3-a",
     "label": "V3 A · Clean",
     "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v3-review/v3-clean.mp4",
