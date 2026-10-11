@@ -63,7 +63,8 @@ await page.setViewportSize({width:390,height:844});await page.getByRole('button'
 await page.locator('#main-video').evaluate(v=>v.currentTime=30.8);await page.waitForFunction(()=>!document.querySelector('#main-video').seeking);
 const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);if(overflow)throw Error('Mobile page overflows');
 await page.screenshot({path:'qa/review-mobile.png',fullPage:true});
-await page.getByText('▶ Video so sánh V4 / V5 / V5.1 (cùng nguồn)',{exact:true}).click();
+if(!await page.locator('#comparison-film-v51').isVisible())await page.getByText('▶ Video so sánh V4 / V5 / V5.1 (cùng nguồn)',{exact:true}).click();
+if(!await page.locator('#comparison-film-v51').isVisible())throw Error('Comparison movie is hidden');
 await page.locator('#comparison-film-v51').evaluate(v=>v.play());
 await page.waitForFunction(()=>document.querySelector('#comparison-film-v51').currentTime>1.5);
 const comparisonFilm=await page.locator('#comparison-film-v51').evaluate(v=>({width:v.videoWidth,height:v.videoHeight,time:v.currentTime,audioBytes:v.webkitAudioDecodedByteCount,error:v.error?.message||null}));

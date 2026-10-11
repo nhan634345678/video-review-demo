@@ -20,5 +20,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           tag=$(python3 -c "import json; print(next(x['url'].split('/')[-2] for x in json.load(open('videos.json')) if x['id']=='v51-technical'))")
-          gh release upload "$tag" v51-playback-test.json qa/*.png
+          zip -q "v51-browser-proof-${GITHUB_RUN_ID}.zip" v51-playback-test.json qa/*.png
+          gh release upload "$tag" "v51-browser-proof-${GITHUB_RUN_ID}.zip"
+          gh release upload "$tag" v51-playback-test.json qa/*.png --clobber
 
