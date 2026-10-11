@@ -62,7 +62,7 @@ await page.getByRole('button',{name:'⇄ So sánh hai bản',exact:true}).click(
 await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'V5.2 · Creative Director',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#main-video').readyState>=2);
 await page.locator('#main-video').evaluate(v=>v.currentTime=30.8);await page.waitForFunction(()=>!document.querySelector('#main-video').seeking);
 const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);if(overflow)throw Error('Mobile page overflows');
-await page.waitForFunction(()=>{const v=document.querySelector('#main-video');return v.readyState===4&&!v.seeking});await page.waitForTimeout(600);await page.screenshot({path:'qa/review-phone.png'});
+await page.waitForFunction(()=>{const v=document.querySelector('#main-video');return v.readyState===4&&!v.seeking});await page.waitForTimeout(600);await page.locator('#viewers').scrollIntoViewIfNeeded();await page.screenshot({path:'qa/review-phone.png'});
 if(!await page.locator('#comparison-film-v52').isVisible())await page.getByText('▶ Video so sánh V5.1 / V5.2 (cùng thời điểm)',{exact:true}).click();
 if(!await page.locator('#comparison-film-v52').isVisible())throw Error('Comparison movie is hidden');
 await page.locator('#comparison-film-v52').evaluate(v=>v.play());
