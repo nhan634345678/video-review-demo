@@ -1,0 +1,21 @@
+name: Test live video preview in Google Chrome
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  chrome:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Provision lightweight browser tester on cloud only
+        run: |
+          google-chrome --version
+          timeout 120 npm install --prefix .qa --no-save playwright@1.64.0
+      - name: Verify actual deployed player including range, seek, AAC and full C playback
+        run: node tests/preview.mjs
+      - name: Preserve browser proof
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload v3-review playback-test.json qa/*.png --clobber
