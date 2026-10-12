@@ -14,8 +14,13 @@ jobs:
       - run: timeout 120 npm install --prefix .qa --no-save playwright@1.64.0
       - run: node tests/v55-preview.mjs
       - name: Preserve this actual browser proof
+        if: always()
         run: |
+          if [ ! -f v55-playback-test.json ]; then
+            python3 -c 'import json,os;open("v55-playback-test.json","w").write(json.dumps({"status":"FAILED_PARTIAL","run":os.environ["GITHUB_RUN_ID"],"audioListening":"AUDIO_LISTENING_UNVERIFIED","scope":"Browser execution stopped before full report; logs and available screenshots preserved."}))'
+          fi
+          cp v55-playback-test.json "v55-playback-test-${GITHUB_RUN_ID}.json"
           zip -q "v55-browser-proof-${GITHUB_RUN_ID}.zip" v55-playback-test.json qa/v55-*.png
-          gh release upload v55-final-38227168021-review "v55-browser-proof-${GITHUB_RUN_ID}.zip" v55-playback-test.json qa/v55-*.png
+          gh release upload v55-final-38227168021-review "v55-browser-proof-${GITHUB_RUN_ID}.zip" "v55-playback-test-${GITHUB_RUN_ID}.json"
         env:
           GH_TOKEN: ${{ github.token }}

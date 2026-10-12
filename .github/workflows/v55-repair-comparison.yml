@@ -1,0 +1,35 @@
+name: V5.5 comparison square-pixel metadata repair
+on:
+  push:
+    branches: [main]
+    paths: [repair-v55-comparison-request.json]
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            timeout 90 sudo apt-get update -qq
+            timeout 90 sudo apt-get install -y --no-install-recommends ffmpeg
+          fi
+          python3 - <<'PY'
+          import urllib.request,pathlib,subprocess,json,hashlib
+          old=pathlib.Path('original-comparison.mp4');new=pathlib.Path('v55-woz-final-source-vs-edit-square.mp4')
+          urllib.request.urlretrieve('https://github.com/nhan634345678/video-review-demo/releases/download/v55-final-38227168021-review/v55-woz-final-source-vs-edit.mp4',old)
+          assert hashlib.sha256(old.read_bytes()).hexdigest()=='970baa53835a9cd7b8093a5f2ff9a05305461a66c060127f3e8448e9ae304915'
+          subprocess.run(['ffmpeg','-y','-v','error','-i',str(old),'-map','0','-c','copy','-bsf:v','h264_metadata=sample_aspect_ratio=1/1','-aspect','9:8','-movflags','+faststart',str(new)],check=True)
+          def packets(p,kind):
+            x=subprocess.check_output(['ffmpeg','-v','error','-i',str(p),'-map','0:'+kind+':0','-c:a','copy']+(['-f','hash','-'] if kind=='a' else ['-f','framemd5','-']),text=True)
+            return x if kind=='a' else '\n'.join(line for line in x.splitlines() if not line.startswith('#'))
+          assert packets(old,'a')==packets(new,'a') and packets(old,'v')==packets(new,'v')
+          meta=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(new)],text=True));v=next(x for x in meta['streams'] if x['codec_type']=='video')
+          assert (v['width'],v['height'],v['sample_aspect_ratio'])==(1080,960,'1:1')
+          pathlib.Path('v55-comparison-repair-proof.json').write_text(json.dumps({'status':'PASS','scope':'Metadata remux only; all decoded video pixels and AAC packet hashes unchanged. Original comparison retained. Final vertical MP4 unaffected.','beforeSHA256':'970baa53835a9cd7b8093a5f2ff9a05305461a66c060127f3e8448e9ae304915','afterSHA256':hashlib.sha256(new.read_bytes()).hexdigest(),'bytes':new.stat().st_size,'sampleAspectRatio':v['sample_aspect_ratio'],'width':v['width'],'height':v['height']},indent=2))
+          PY
+          gh release upload v55-final-38227168021-review v55-woz-final-source-vs-edit-square.mp4 v55-comparison-repair-proof.json
