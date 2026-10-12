@@ -1,0 +1,23 @@
+name: Verify actual V5.4 second-source public review and V5.3 regression
+on:
+  push:
+    branches: [main]
+    paths: [review-v54-request.json]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  chrome:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: timeout 120 npm install --prefix .qa --no-save playwright@1.64.0
+      - run: node tests/v54-preview.mjs
+      - name: Preserve actual browser and mobile proof
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(python3 -c "import json; print(next(x['url'].split('/')[-2] for x in json.load(open('videos.json')) if x['id']=='v54-story'))")
+          zip -q "v54-browser-proof-${GITHUB_RUN_ID}.zip" v54-playback-test.json qa/*.png
+          gh release upload "$tag" "v54-browser-proof-${GITHUB_RUN_ID}.zip" v54-playback-test.json qa/*.png

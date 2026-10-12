@@ -1,0 +1,250 @@
+[
+  {
+    "id": "v53-technical",
+    "label": "V5.3 · Selective Creative",
+    "group": "nasa",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v53-final-38156809586-review/v53-technical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52,
+    "bytes": 44500971,
+    "notes": "Callout vàng gọn; caption Anton 106px. Hai ảnh chuyển ngang liên tục, vòng tập trung vùng cực và FASTER WARMING đúng lời thoại. Dấu X bác bỏ suy luận LOCAL = GLOBAL?; giữ các phần tốt của bản trước.",
+    "markers": [
+      {
+        "time": 0,
+        "label": "Hook"
+      },
+      {
+        "time": 8.65,
+        "label": "Winter contradiction"
+      },
+      {
+        "time": 15.55,
+        "label": "Climate vs weather"
+      },
+      {
+        "time": 26.05,
+        "label": "Regional differences"
+      },
+      {
+        "time": 38.65,
+        "label": "Misconception"
+      },
+      {
+        "time": 44.9,
+        "label": "Payoff"
+      }
+    ]
+  },
+  {
+    "id": "v52-technical",
+    "label": "V5.2 · Creative Director",
+    "group": "nasa",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v52-final-38148687940-review/v52-technical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52,
+    "bytes": 44740646,
+    "notes": "Caption Anton lớn hơn 21%, nhấn từ đúng nhịp, hook viền trắng và COLD? coral. Chuyển Trái Đất sang ảnh Bắc Cực, đường cong 3×, hai zoom có lý do. Kết thúc đủ câu ở 52 giây; nguồn và ghi công trong metadata.",
+    "markers": [
+      {
+        "time": 0,
+        "label": "Hook"
+      },
+      {
+        "time": 8.65,
+        "label": "Winter contradiction"
+      },
+      {
+        "time": 15.55,
+        "label": "Climate vs weather"
+      },
+      {
+        "time": 26.05,
+        "label": "Regional differences"
+      },
+      {
+        "time": 38.65,
+        "label": "Misconception"
+      },
+      {
+        "time": 44.9,
+        "label": "Payoff"
+      }
+    ]
+  },
+  {
+    "id": "v51-technical",
+    "label": "V5.1 · Creative Master",
+    "group": "nasa",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v51-final-38142833461-review/v51-technical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 46611157,
+    "notes": "Chữ trắng sáng, nhấn vàng/xanh/coral, emoji theo lời nói; tiêu đề và tên khách mời bo tròn. Ảnh vệ tinh NASA, PiP bo góc và chuyển động theo đường cong. Cùng nguồn, lời nói và âm thanh với V4/V5.",
+    "markers": [
+      {
+        "time": 0,
+        "label": "Hook"
+      },
+      {
+        "time": 8.65,
+        "label": "Winter contradiction"
+      },
+      {
+        "time": 15.55,
+        "label": "Climate vs weather"
+      },
+      {
+        "time": 26.05,
+        "label": "Regional differences"
+      },
+      {
+        "time": 38.65,
+        "label": "Misconception"
+      },
+      {
+        "time": 44.9,
+        "label": "Payoff"
+      }
+    ]
+  },
+  {
+    "id": "v3-a",
+    "label": "V3 A · Clean",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v3-review/v3-clean.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 29301878,
+    "notes": "Phụ đề theo cụm, giọng nói gốc, không nhạc nền.",
+    "group": "nasa"
+  },
+  {
+    "id": "v3-b",
+    "label": "V3 B · Premium",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v3-review/v3-premium.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 31146540,
+    "notes": "Chữ trắng/vàng theo từng từ, hai lần zoom 7%, nhạc nền giảm theo giọng nói.",
+    "group": "nasa"
+  },
+  {
+    "id": "v3-c",
+    "label": "V3 C · Maximum",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v3-review/v3-max-quality.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 50878353,
+    "notes": "Cùng cách dựng B; CRF 18 và nét chữ cải thiện.",
+    "group": "nasa"
+  },
+  {
+    "id": "v4-premium",
+    "label": "V4 · Premium",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v4-review/v4-premium.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 39784186,
+    "notes": "Căn165từ theo âm thanh, phụ đề tối đa2dòng, hook mới và2đồ họa giải thích. CRF19 fast.",
+    "group": "nasa"
+  },
+  {
+    "id": "v4-max",
+    "label": "V4 · Maximum",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v4-review/v4-max-quality.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 44420884,
+    "notes": "Cùng dựng V4; CRF18 medium, phụ đề khử răng cưa2×.",
+    "group": "nasa"
+  },
+  {
+    "id": "v5-technical",
+    "label": "V5 · Technical",
+    "group": "nasa",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v5-review/v5-technical.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 52.4,
+    "bytes": 34552381,
+    "notes": "Phụ đề theo nghĩa và từng từ; vị trí thay đổi theo cảnh. Đồ họa giải thích global/local, vùng khí hậu và PiP. Cùng lời nói, nguồn, nhạc và thời lượng với V4.",
+    "markers": [
+      {
+        "time": 0,
+        "label": "Hook"
+      },
+      {
+        "time": 8.65,
+        "label": "Winter contradiction"
+      },
+      {
+        "time": 15.55,
+        "label": "Climate vs weather"
+      },
+      {
+        "time": 26.05,
+        "label": "Regional differences"
+      },
+      {
+        "time": 38.65,
+        "label": "Misconception"
+      },
+      {
+        "time": 44.9,
+        "label": "Payoff"
+      }
+    ]
+  },
+  {
+    "id": "v5-entertainment",
+    "label": "V5 · Original skit",
+    "group": "original",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v5-review/v5-entertainment.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 28.533333,
+    "bytes": 1180113,
+    "notes": "Hài hư cấu nguyên bản, giọng tổng hợp. Counter $10.000 và hình phản ứng xuất hiện theo lời thoại; nhấn màu theo setup/punchline/payoff. Không phải diễn viên thật.",
+    "markers": [
+      {
+        "time": 0,
+        "label": "Hook"
+      },
+      {
+        "time": 3.830793650793651,
+        "label": "Setup"
+      },
+      {
+        "time": 8.033696145124717,
+        "label": "Tension"
+      },
+      {
+        "time": 12.329478458049886,
+        "label": "Reaction"
+      },
+      {
+        "time": 14.68639455782313,
+        "label": "Punchline"
+      },
+      {
+        "time": 16.82281179138322,
+        "label": "Beat"
+      },
+      {
+        "time": 20.664625850340137,
+        "label": "Payoff"
+      },
+      {
+        "time": 24.774648526077097,
+        "label": "Ending"
+      }
+    ]
+  }
+]
