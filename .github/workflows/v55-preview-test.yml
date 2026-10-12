@@ -1,0 +1,21 @@
+name: V5.5 actual Chrome mobile and frozen playback QA
+on:
+  push:
+    branches: [main]
+    paths: [review-v55-request.json]
+permissions:
+  contents: write
+jobs:
+  chrome:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: timeout 120 npm install --prefix .qa --no-save playwright@1.64.0
+      - run: node tests/v55-preview.mjs
+      - name: Preserve this actual browser proof
+        run: |
+          zip -q "v55-browser-proof-${GITHUB_RUN_ID}.zip" v55-playback-test.json qa/v55-*.png
+          gh release upload v55-final-38227168021-review "v55-browser-proof-${GITHUB_RUN_ID}.zip" v55-playback-test.json qa/v55-*.png
+        env:
+          GH_TOKEN: ${{ github.token }}
