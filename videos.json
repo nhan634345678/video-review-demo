@@ -1,5 +1,38 @@
 [
   {
+    "id": "v54-story",
+    "label": "V5.4 · Startup story (synthetic)",
+    "group": "original",
+    "url": "https://github.com/nhan634345678/video-review-demo/releases/download/v54-final-38210086880-review/v54-story.mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration": 27.433333333333334,
+    "bytes": 1401430,
+    "notes": "Câu chuyện startup hư cấu nguyên bản, hình và giọng tổng hợp. Đây là kiểm chứng engine với nguồn thứ hai, không phải footage người thật. Caption 106px, callout, PiP và chuyển media theo câu nói. Audio chưa được nghe trực tiếp.",
+    "markers": [
+      {
+        "time": 0,
+        "label": "Hook"
+      },
+      {
+        "time": 2.578,
+        "label": "Investor question"
+      },
+      {
+        "time": 8.854,
+        "label": "Dashboard"
+      },
+      {
+        "time": 15.156,
+        "label": "Zero dollars"
+      },
+      {
+        "time": 23.907,
+        "label": "Payoff"
+      }
+    ]
+  },
+  {
     "id": "v53-technical",
     "label": "V5.3 · Selective Creative",
     "group": "nasa",
