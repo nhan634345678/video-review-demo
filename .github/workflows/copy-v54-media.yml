@@ -48,5 +48,6 @@ jobs:
             assert p.stat().st_size==a['bytes'] and hashlib.sha256(p.read_bytes()).hexdigest()==a['sha256']
           pathlib.Path('media-checksums.json').write_text(json.dumps(m,indent=2))
       - name: Preserve separate versioned review release
-        run: gh release create "$RELEASE_TAG" media/* media-checksums.json --title "Braincell V5.4 reviewed media" --notes-file V53_ATTRIBUTION.md
+        run: gh release create "$RELEASE_TAG" media/* media-checksums.json --title "Braincell V5.4 reviewed media" --notes-file V54_ATTRIBUTION.md
+
 
